@@ -9,25 +9,25 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "vegetal", schema = "horticula")
+@Table(name = "VEGETAL")
 public class Vegetal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "VEGETAL_ID", nullable = false)
     private Long id;
 
     @NotNull(message = "O nome é obrigatório.")
-    @Column(name = "nome")
+    @Column(name = "NOME",  nullable = false)
     private String nome;
 
     @NotNull(message = "A categoria é obrigatório.")
-    @Column(name = "categoria")
+    @Column(name = "CATEGORIA",  nullable = false)
     private String categoria;
 
     @NotNull(message = "O tipo do vegetal é obrigatório.")
     @ManyToOne
-    @JoinColumn(name = "tipo_vegetal_id")
+    @JoinColumn(name = "TIPOVEGETAL_ID",  nullable = false)
     private TipoVegetal tipoVegetal;
 
 }

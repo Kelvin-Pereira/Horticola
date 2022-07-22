@@ -5,6 +5,23 @@
     <title>Dashboard</title>
 </head>
 <body>
-<h1>Teste</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="tipo : ${tipos}">
+        <td th:text="${tipo.id}">Id</td>
+        <td th:text="${tipo.nome}">First name</td>
+<!--        <td>-->
+<!--            <form th:action="@{/users/doDelete/}" th:object="${customer}" method="post">-->
+<!--                <button type="submit">Delete</button>-->
+<!--            </form>-->
+<!--        </td>-->
+    </tr>
+</table>
 </body>
 </html>
