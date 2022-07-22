@@ -1,6 +1,7 @@
 package com.horticola.entity;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "TIPOVEGETAL")
+@RequiredArgsConstructor
 public class TipoVegetal {
 
     @Id
@@ -26,4 +28,7 @@ public class TipoVegetal {
     @OneToMany(mappedBy = "tipoVegetal")
     private List<Vegetal> vegetals = new ArrayList<>();
 
+    public TipoVegetal(String nome) {
+        this.nome = nome;
+    }
 }
