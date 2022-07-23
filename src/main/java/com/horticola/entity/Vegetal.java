@@ -1,10 +1,10 @@
 package com.horticola.entity;
 
-import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -18,16 +18,16 @@ public class Vegetal {
     private Long id;
 
     @NotNull(message = "O nome é obrigatório.")
-    @Column(name = "NOME",  nullable = false)
+    @Column(name = "NOME", nullable = false)
     private String nome;
 
     @NotNull(message = "A categoria é obrigatório.")
-    @Column(name = "CATEGORIA",  nullable = false)
+    @Column(name = "CATEGORIA", nullable = false)
     private String categoria;
 
     @NotNull(message = "O tipo do vegetal é obrigatório.")
     @ManyToOne
-    @JoinColumn(name = "TIPOVEGETAL_ID",  nullable = false)
+    @JoinColumn(name = "TIPOVEGETAL_ID", nullable = false)
     private TipoVegetal tipoVegetal;
 
 }

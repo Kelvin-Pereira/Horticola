@@ -14,7 +14,7 @@ public class HorticolaApplication {
                 SpringApplication.run(HorticolaApplication.class, args);
         TipoVegetalRepository repository =
                 context.getBean(TipoVegetalRepository.class);
-        TipoVegetal tipoVegetal = new TipoVegetal("wer");
+        TipoVegetal tipoVegetal = new TipoVegetal("Folhagem");
 
         repository.save(tipoVegetal);
     }
