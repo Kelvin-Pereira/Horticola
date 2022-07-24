@@ -1,6 +1,6 @@
 package com.horticola.controller;
 
-import com.horticola.repository.TipoVegetalRepository;
+import com.horticola.repository.VegetalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class DashboardController {
 
-    private final TipoVegetalRepository repository;
+    private final VegetalRepository repository;
 
     @GetMapping("/teste")
     public String teste(Model model) {

@@ -1,4 +1,4 @@
-package com.horticola.config;
+package com.horticola.config.database;
 
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,7 @@
 package com.horticola.entity;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,10 +11,11 @@ import javax.validation.constraints.NotNull;
 @Setter
 @Entity
 @Table(name = "VEGETAL")
+@RequiredArgsConstructor
 public class Vegetal {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "VEGETAL_ID", nullable = false)
     private Long id;
 
@@ -21,13 +23,12 @@ public class Vegetal {
     @Column(name = "NOME", nullable = false)
     private String nome;
 
-    @NotNull(message = "A categoria é obrigatório.")
-    @Column(name = "CATEGORIA", nullable = false)
-    private String categoria;
+    @NotNull(message = "O ciclo de dias é obrigatório.")
+    @Column(name = "CICLO_DIAS", nullable = false)
+    private Integer ciclosDias;
 
-    @NotNull(message = "O tipo do vegetal é obrigatório.")
-    @ManyToOne
-    @JoinColumn(name = "TIPOVEGETAL_ID", nullable = false)
-    private TipoVegetal tipoVegetal;
-
+    public Vegetal(String nome, Integer ciclosDias) {
+        this.nome = nome;
+        this.ciclosDias = ciclosDias;
+    }
 }
