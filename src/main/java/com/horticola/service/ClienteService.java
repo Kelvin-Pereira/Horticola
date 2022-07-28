@@ -3,10 +3,9 @@ package com.horticola.service;
 import com.horticola.entity.Cliente;
 import com.horticola.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,15 +18,15 @@ public class ClienteService {
         return repository.save(cliente);
     }
 
-    public Page<Cliente> listar(Pageable pageable) {
-        return repository.findAll(pageable);
+    public List<Cliente> listar() {
+        return repository.findAll();
     }
 
     public Optional<Cliente> buscarPorId(Long id) {
         return repository.findById(id);
     }
 
-    public void remover(Cliente cliente){
+    public void remover(Cliente cliente) {
         repository.delete(cliente);
     }
 
